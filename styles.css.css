@@ -1,0 +1,187 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif; /* Usar uma fonte padrão, pode ser ajustada depois */
+    background-color: #f8f9fa; /* Cor de fundo aproximada */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 30px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+header nav ul li a:hover {
+    color: #000;
+}
+
+.btn-signup {
+    background-color: #70c15c; /* Cor verde aproximada do botão */
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-signup:hover {
+    background-color: #5a9a4a;
+}
+
+/* Main Content */
+main {
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    gap: 40px; /* Espaço entre ilustração e texto */
+}
+
+.illustration-section {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    min-height: 400px; /* Ensure section has height, adjust if needed */
+}
+
+/* Estilos para a imagem da ilustração */
+.illustration-section img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da seção */
+    height: auto;    /* Mantém a proporção da imagem */
+    display: block;  /* Remove espaços extras */
+    /* Se a imagem original não tiver o fundo oval, 
+       e você quiser adicioná-lo via CSS, 
+       você aplicaria background e border-radius 
+       na .illustration-section e ajustaria o padding/margin da img */
+}
+
+.content-section {
+    flex: 1;
+    padding-left: 40px; /* Add some padding to separate from the illustration edge */
+}
+
+.content-section h1 {
+    font-size: 2.8em; /* Tamanho aproximado */
+    color: #1a2a6c; /* Cor azul escura aproximada */
+    margin-bottom: 20px;
+    line-height: 1.2;
+    font-weight: 700; /* Adicionado peso da fonte */
+}
+
+.content-section p {
+    font-size: 1em;
+    color: #6c757d; /* Cor ajustada para cinza mais claro */
+    margin-bottom: 30px;
+    max-width: 450px; /* Limitar largura do parágrafo */
+}
+
+.learn-more {
+    color: #70c15c; /* Cor verde do link */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px; /* Reduzir padding lateral */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start; /* Alinhar itens à esquerda */
+    }
+
+    header nav {
+        margin-bottom: 15px;
+        width: 100%; /* Fazer nav ocupar largura total */
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: flex-start; /* Alinhar links à esquerda */
+    }
+
+    header nav ul li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .btn-signup {
+        align-self: flex-start; /* Manter botão alinhado à esquerda */
+        margin-top: 10px; /* Adicionar espaço acima do botão */
+    }
+
+    main {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 30px; /* Reduzir padding superior */
+        gap: 20px; /* Reduzir espaço entre seções */
+    }
+
+    .content-section {
+        order: 1; /* Texto vem antes em telas menores */
+        margin-bottom: 20px; /* Reduzir margem inferior */
+        padding-left: 0; /* Remover padding esquerdo */
+    }
+
+    .illustration-section {
+        order: 2;
+        min-height: auto; /* Ajustar altura mínima */
+        width: 90%; /* Ajustar largura da seção da ilustração */
+        margin: 0 auto; /* Centralizar seção */
+    }
+
+    /* A regra .illustration-section img já torna a imagem responsiva */
+
+    .content-section h1 {
+        font-size: 2.0em; /* Reduzir um pouco o título */
+    }
+
+    .content-section p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 95%; /* Permitir que o parágrafo use mais largura */
+        font-size: 0.95em; /* Leve ajuste no tamanho da fonte */
+    }
+}
+
